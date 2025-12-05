@@ -1,0 +1,6 @@
+@VladimirNyaninKT_31_22_HostAddress = http://localhost:5095
+
+GET {{VladimirNyaninKT_31_22_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
