@@ -1,5 +1,7 @@
 using NLog;
 using NLog.Web;
+using Microsoft.EntityFrameworkCore;
+using VladimirNyaninKT_31_22.Database;
 
 var builder = WebApplication.CreateBuilder(args);
 var logger = LogManager.Setup().LoadConfigurationFromAppSettings().GetCurrentClassLogger();
@@ -14,8 +16,8 @@ try
     builder.Services.AddSwaggerGen();
 
 
-    //builder.Services.AddDbContext<DisciplinaDbContext>(options =>
-    //   options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+    builder.Services.AddDbContext<UniversityDbContext>(options =>
+       options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
     //builder.Services.AddServices();
 
