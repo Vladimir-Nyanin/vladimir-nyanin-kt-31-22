@@ -2,9 +2,9 @@
 {
     public class Degree
     {
-        public int DegreeId;
+        public int DegreeId { get; set; }
 
-        public string Name;
+        public string Name { get; set; }
         public bool IsDeleted { get; set; }
     }
 }

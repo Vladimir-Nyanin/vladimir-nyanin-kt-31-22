@@ -2,9 +2,9 @@
 {
     public class Workload
     {
-        public int WorkloadId;
+        public int WorkloadId { get; set; }
 
-        public int HoursQuantity;
+        public int HoursQuantity { get; set; }
         public bool IsDeleted { get; set; }
     }
 }

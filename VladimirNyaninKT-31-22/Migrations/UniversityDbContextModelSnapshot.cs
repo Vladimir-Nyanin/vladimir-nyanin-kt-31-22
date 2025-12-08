@@ -168,10 +168,6 @@ namespace VladimirNyaninKT_31_22.Migrations
                     b.HasIndex("IsDeleted")
                         .HasDatabaseName("ix_subjects_is_deleted");
 
-                    b.HasIndex("Name")
-                        .IsUnique()
-                        .HasDatabaseName("ix_subjects_subject_name");
-
                     b.HasIndex("TeacherId");
 
                     b.HasIndex("WorkloadId");

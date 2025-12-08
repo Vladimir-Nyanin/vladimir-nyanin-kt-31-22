@@ -17,8 +17,8 @@ namespace VladimirNyaninKT_31_22.Migrations
                 {
                     degree_id = table.Column<int>(type: "integer", nullable: false, comment: "Идентификатор учёной степени")
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    is_deleted = table.Column<bool>(type: "bool", nullable: false, defaultValue: false, comment: "Признак удаления"),
-                    degree_name = table.Column<string>(type: "varchar", maxLength: 100, nullable: false, comment: "Название учёной степени")
+                    degree_name = table.Column<string>(type: "varchar", maxLength: 100, nullable: false, comment: "Название учёной степени"),
+                    is_deleted = table.Column<bool>(type: "bool", nullable: false, defaultValue: false, comment: "Признак удаления")
                 },
                 constraints: table =>
                 {
@@ -31,8 +31,8 @@ namespace VladimirNyaninKT_31_22.Migrations
                 {
                     department_id = table.Column<int>(type: "integer", nullable: false, comment: "Идентификатор кафедры")
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    is_deleted = table.Column<bool>(type: "bool", nullable: false, defaultValue: false, comment: "Признак удаления"),
-                    department_name = table.Column<string>(type: "varchar", maxLength: 100, nullable: false, comment: "Название кафедры")
+                    department_name = table.Column<string>(type: "varchar", maxLength: 100, nullable: false, comment: "Название кафедры"),
+                    is_deleted = table.Column<bool>(type: "bool", nullable: false, defaultValue: false, comment: "Признак удаления")
                 },
                 constraints: table =>
                 {
@@ -45,8 +45,8 @@ namespace VladimirNyaninKT_31_22.Migrations
                 {
                     position_id = table.Column<int>(type: "integer", nullable: false, comment: "Идентификатор должности")
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    is_deleted = table.Column<bool>(type: "bool", nullable: false, defaultValue: false, comment: "Признак удаления"),
-                    position_name = table.Column<string>(type: "varchar", maxLength: 100, nullable: false, comment: "Название должности")
+                    position_name = table.Column<string>(type: "varchar", maxLength: 100, nullable: false, comment: "Название должности"),
+                    is_deleted = table.Column<bool>(type: "bool", nullable: false, defaultValue: false, comment: "Признак удаления")
                 },
                 constraints: table =>
                 {
@@ -59,8 +59,8 @@ namespace VladimirNyaninKT_31_22.Migrations
                 {
                     workload_id = table.Column<int>(type: "integer", nullable: false, comment: "Идентификатор загруженности")
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    is_deleted = table.Column<bool>(type: "bool", nullable: false, defaultValue: false, comment: "Признак удаления"),
-                    hours_quantity = table.Column<int>(type: "int4", nullable: false, comment: "Загруженность в часах")
+                    hours_quantity = table.Column<int>(type: "int4", nullable: false, comment: "Загруженность в часах"),
+                    is_deleted = table.Column<bool>(type: "bool", nullable: false, defaultValue: false, comment: "Признак удаления")
                 },
                 constraints: table =>
                 {
@@ -111,10 +111,10 @@ namespace VladimirNyaninKT_31_22.Migrations
                 {
                     subject_id = table.Column<int>(type: "integer", nullable: false, comment: "Идентификатор дисциплины")
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    subject_name = table.Column<string>(type: "varchar", maxLength: 100, nullable: false, comment: "Название дисциплины"),
                     is_deleted = table.Column<bool>(type: "bool", nullable: false, defaultValue: false, comment: "Признак удаления"),
                     TeacherId = table.Column<int>(type: "integer", nullable: false),
-                    WorkloadId = table.Column<int>(type: "integer", nullable: false),
-                    subject_name = table.Column<string>(type: "varchar", maxLength: 100, nullable: false, comment: "Название дисциплины")
+                    WorkloadId = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -170,12 +170,6 @@ namespace VladimirNyaninKT_31_22.Migrations
                 name: "ix_subjects_is_deleted",
                 table: "subjects",
                 column: "is_deleted");
-
-            migrationBuilder.CreateIndex(
-                name: "ix_subjects_subject_name",
-                table: "subjects",
-                column: "subject_name",
-                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_subjects_TeacherId",

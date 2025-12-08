@@ -2,9 +2,9 @@
 {
     public class Subject
     {
-        public int SubjectId;
+        public int SubjectId { get; set; }
 
-        public string Name;
+        public string Name { get; set; }
         public bool IsDeleted { get; set; }
 
 

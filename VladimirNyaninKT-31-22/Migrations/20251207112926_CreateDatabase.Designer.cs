@@ -11,7 +11,7 @@ using VladimirNyaninKT_31_22.Database;
 namespace VladimirNyaninKT_31_22.Migrations
 {
     [DbContext(typeof(UniversityDbContext))]
-    [Migration("20251206095202_Create-Database")]
+    [Migration("20251207112926_CreateDatabase")]
     partial class CreateDatabase
     {
         /// <inheritdoc />
@@ -170,10 +170,6 @@ namespace VladimirNyaninKT_31_22.Migrations
 
                     b.HasIndex("IsDeleted")
                         .HasDatabaseName("ix_subjects_is_deleted");
-
-                    b.HasIndex("Name")
-                        .IsUnique()
-                        .HasDatabaseName("ix_subjects_subject_name");
 
                     b.HasIndex("TeacherId");
 

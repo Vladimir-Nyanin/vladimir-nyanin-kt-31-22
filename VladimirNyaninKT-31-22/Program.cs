@@ -1,7 +1,9 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 using NLog;
 using NLog.Web;
-using Microsoft.EntityFrameworkCore;
 using VladimirNyaninKT_31_22.Database;
+using static VladimirNyaninKT_31_22.ServiceExtensions.ServiceExtensions;
 
 var builder = WebApplication.CreateBuilder(args);
 var logger = LogManager.Setup().LoadConfigurationFromAppSettings().GetCurrentClassLogger();
@@ -19,7 +21,7 @@ try
     builder.Services.AddDbContext<UniversityDbContext>(options =>
        options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-    //builder.Services.AddServices();
+    builder.Services.AddServices();
 
     var app = builder.Build();
 

@@ -17,7 +17,7 @@ namespace VladimirNyaninKT_31_22.Configurations
         public const string NameColumn = "subject_name";
         public const string IsDeletedColumn = "is_deleted";
 
-        public const string UniqueNameIndexName = $"ix_{TableName}_subject_name";
+        //public const string UniqueNameIndexName = $"ix_{TableName}_subject_name";
         public const string IsDeletedIndexName = $"ix_{TableName}_is_deleted";
 
 
@@ -67,9 +67,9 @@ namespace VladimirNyaninKT_31_22.Configurations
 
 
 
-            builder.HasIndex(p => p.Name)
-                .IsUnique()
-               .HasDatabaseName(UniqueNameIndexName);
+            //builder.HasIndex(p => p.Name)
+            //    .IsUnique()
+            //   .HasDatabaseName(UniqueNameIndexName);
        
             builder.HasIndex(p => p.IsDeleted)
               .HasDatabaseName(IsDeletedIndexName);

@@ -2,9 +2,9 @@
 {
     public class Position
     {
-        public int PositionId;
+        public int PositionId { get; set; }
 
-        public string Name;
+        public string Name { get; set; }
         public bool IsDeleted { get; set; }
     }
 }
