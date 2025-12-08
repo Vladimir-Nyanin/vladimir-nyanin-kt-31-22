@@ -3,6 +3,7 @@ using Microsoft.OpenApi.Models;
 using NLog;
 using NLog.Web;
 using VladimirNyaninKT_31_22.Database;
+using VladimirNyaninKT_31_22.Middlewares;
 using static VladimirNyaninKT_31_22.ServiceExtensions.ServiceExtensions;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -31,6 +32,8 @@ try
         app.UseSwaggerUI();
 
     }
+
+    app.UseMiddleware<ExceptionHandlerMiddleware>();
 
     app.UseAuthentication();
     app.MapControllers();
