@@ -25,6 +25,15 @@ namespace VladimirNyaninKT_31_22.Interfaces
             _dbContext = dbContext;
         }
 
+        //public Task<Subject[]> GetSubjectsByTeacherAsync(GetSubjectsByTeacherFilter filter, CancellationToken cancellationToken = default)
+        //{
+        //    var subjects = _dbContext.Set<Subject>()
+        //        .Where(p => p.TeacherId == filter.TeacherId)
+        //        .ToArrayAsync(cancellationToken);
+
+        //    return subjects;
+        //}
+
         public Task<Subject[]> GetSubjectsByTeacherAsync(GetSubjectsByTeacherFilter filter, CancellationToken cancellationToken = default)
         {
             var subjects = _dbContext.Set<Subject>()

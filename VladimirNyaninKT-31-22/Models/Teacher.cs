@@ -1,4 +1,6 @@
-﻿namespace VladimirNyaninKT_31_22.Models
+﻿using System.Text.RegularExpressions;
+
+namespace VladimirNyaninKT_31_22.Models
 {
     public class Teacher
     {
@@ -20,6 +22,14 @@
         public Degree Degree { get; set; }
         public Position Position { get; set; }
         public Department Department { get; set; }
+
+
+        public bool isValidFullName()
+        {
+            return Regex.Match(LastName, @"[а-яА-Я]+").Success &&
+                   Regex.Match(FirstName, @"[а-яА-Я]+").Success &&
+                   Regex.Match(Patronymic, @"[а-яА-Я]+").Success;
+        }
 
     }
 }
